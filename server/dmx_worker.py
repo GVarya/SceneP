@@ -1,11 +1,13 @@
 import requests
 import time
 from tester import DmxPyTry
+from DmxPy import DmxPy
 
 POLL_PERIOD = 0.1 # S
 
 last_time = 0
 
+#dmx = DmxPy('COM8',  log_actions=True)
 dmx = DmxPyTry()
 
 while True:
@@ -17,9 +19,12 @@ while True:
             #print(command["channel"], ":", command["intensity"])
             print(command["channel"], ":", command["intensity"])
             if command["channel"] == "all":
-                dmx.OnAll(command["intensity"])
-            elif command["channel"] == "blackout":
-                dmx.blackout()
+                if int(command["intensity"]) > 0:
+                    dmx.allOn(int(command["intensity"]))
+                else:
+                    dmx.blackout()
+            # elif command["channel"] == "blackout":
+            #     dmx.blackout()
 
             else:
                 dmx.setChannel(chan=int(command["channel"]),

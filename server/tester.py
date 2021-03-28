@@ -36,7 +36,7 @@ class DmxPyTry:
     def render(self):
         self.root.update()
 
-    def OnAll(self, intensity):
+    def allOn(self, intensity):
         for i in range(512):
             self.dmxData[i].configure(background="#{:02x}{:02x}{:02x}".format(255, intensity, intensity // 3))
             self.dmxData[i].configure(text="{:03d}: {:03d}".format(i, intensity))

@@ -3,11 +3,16 @@ import time
 
 dmx = DmxPy('COM8')
 
-for i in range(512):
-	dmx.setChannel(i, 200)
-	dmx.render()
-	time.sleep(0.01)
-	print("chan: ", i)
+# for i in range(512):
+# 	dmx.setChannel(i, 200)
+# 	dmx.render()
+# 	print("chan: ", i)
+
+dmx.allOn(225)
+dmx.render()
+time.sleep(1)
+dmx.blackout()
+dmx.render()
 
 
 '''

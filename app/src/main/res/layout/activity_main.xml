@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="Добро пожаловать в (название придумаю потом) выберите способ работы"
+        android:text="Добро пожаловать в StageSparkle \n выберите способ работы"
         android:textAlignment="center"
         android:textColor="#ffba00"
         android:textSize="30sp"

@@ -7,7 +7,10 @@ POLL_PERIOD = 0.1 # S
 
 last_time = 0
 
-#dmx = DmxPy('COM8',  log_actions=True)
+#port_name = input()
+
+#COM8
+#dmx = DmxPy(port_name,  log_actions=True)
 dmx = DmxPyTry()
 
 while True:

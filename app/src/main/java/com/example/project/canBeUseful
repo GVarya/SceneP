@@ -89,6 +89,12 @@ for sending to server
 //                //TODO Handle problems..
 
 
+    android:background="@string/background_colour"
+        android:textColor="@string/text_colour"
+    android:textColor="@string/text_colour"
+    android:textColor="@string/text_colour"
+    android:textColorHint="@string/text_colour"
+    android:background="@string/button_colour"
 
 
 

@@ -12,10 +12,13 @@ import java.util.ArrayList;
 
 public class BeforeYouStartActivity extends AppCompatActivity implements View.OnClickListener {
     public static String ipAddress = "";
-    private EditText ipAddressWidget;
-    private Button send;
     public static Sender s;
     public static ArrayList<Scene> scenes = new ArrayList<>();
+    public static Scene currentPosition;
+
+    private EditText ipAddressWidget;
+    private Button send;
+
 
 
 
@@ -28,10 +31,11 @@ public class BeforeYouStartActivity extends AppCompatActivity implements View.On
         ipAddressWidget = findViewById(R.id.IpAddress);
         send = findViewById(R.id.buttonSend);
         send.setOnClickListener(this);
-        Scene allOn = new Scene("Включить всё", 12, 255);
+        Scene allOn = new Scene("Включить всё", 24, 255);
         scenes.add(allOn);
-        Scene blackOut = new Scene("выключить всё", 12, 0);
+        Scene blackOut = new Scene("выключить всё", 24, 0);
         scenes.add(blackOut);
+        currentPosition = new Scene("currentPosition", 24, 0);
 
 
 

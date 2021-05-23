@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/background_colour"
     tools:context=".BeforeYouStartActivity">
 
 
@@ -14,8 +14,8 @@
         android:layout_height="119dp"
         android:text="Прежде чем начать работу, введите IP адресс компьютера, на котором запущен сервер (телефон должен быть в этой же сети)."
         android:textAlignment="center"
-        android:textColor="#ffba00"
         android:textSize="20sp"
+        android:textColor="@color/text_colour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -23,31 +23,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.206" />
 
-    <EditText
-        android:id="@+id/IpAddress"
-        android:layout_width="290dp"
-        android:layout_height="50dp"
-        android:hint="Например: 192.168.1.123"
-        android:textColor="#ffba00"
-        android:textColorHint="#ffba00"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.1" />
+<EditText
+    android:theme="@style/SeekBarColor"
+    android:id="@+id/IpAddress"
+    android:layout_width="290dp"
+    android:layout_height="50dp"
+    android:hint="Например: 192.168.1.123"
+    android:textColorHint="@color/text_colour"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:textColor="@color/text_colour"
+    app:layout_constraintHorizontal_bias="0.495"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView2"
+    app:layout_constraintVertical_bias="0.1" />
 
-    <Button
-        android:id="@+id/buttonSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Далее"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="#ffba00"
-        app:layout_constraintTop_toBottomOf="@+id/IpAddress"
-        app:layout_constraintVertical_bias="0.216" />
+<Button
+    android:id="@+id/buttonSend"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Далее"
+    android:textColor="@color/text_colour"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@drawable/rounded_button"
+    app:layout_constraintTop_toBottomOf="@+id/IpAddress"
+    app:layout_constraintVertical_bias="0.216" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

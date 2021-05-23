@@ -1,5 +1,7 @@
 package com.example.project;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class Scene {
@@ -8,7 +10,10 @@ public class Scene {
 
     public Scene(String name, ArrayList<Lamp> intensities) {
         this.name = name;
-        this.lamps = intensities;
+        for(Lamp l: intensities){
+            this.lamps.add(new Lamp(l.getCannal(), l.getIntensity()));
+        }
+
     }
 
     public Scene(String name, int count, int intensity) {
@@ -16,6 +21,11 @@ public class Scene {
         for(int i = 0; i < count; i++){
             this.lamps.add(new Lamp(i, intensity));
         }
+    }
+
+    public void changeLamp(Lamp lamp){
+        lamps.get(lamp.getCannal()).setIntensity(lamp.getIntensity());
+        Log.i("lamp changed", lamp.getCannal() + " " + lamp.getIntensity());
     }
 
     public String getName() {

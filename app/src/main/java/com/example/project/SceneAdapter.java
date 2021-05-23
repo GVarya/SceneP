@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static com.example.project.BeforeYouStartActivity.currentPosition;
 import static com.example.project.BeforeYouStartActivity.s;
 import static com.example.project.BeforeYouStartActivity.scenes;
 
@@ -37,6 +39,8 @@ public class SceneAdapter  extends RecyclerView.Adapter<SceneAdapter.ViewHolder>
                     if(scene.getName().equals(sceneName)){
                         for(Lamp l: scene.getLamps()){
                             s.send(l);
+                            Log.i("lamp", l.getCannal()+ " " + l.getIntensity());
+                            currentPosition.changeLamp(l);
                         }
                     }
                 }
@@ -52,7 +56,7 @@ public class SceneAdapter  extends RecyclerView.Adapter<SceneAdapter.ViewHolder>
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recyclerview_item, parent, false);
+                .inflate(R.layout.recyclerview_scene_item, parent, false);
 
 
         return new ViewHolder(view);

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#000000"
+    android:background="@color/background_colour"
     android:layout_height="match_parent">
 
     <TextView
@@ -11,16 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="Добро пожаловать в StageSparkle \n выберите способ работы"
+        android:text="Добро пожаловать в \n StageSparkle \n выберите способ работы"
         android:textAlignment="center"
-        android:textColor="#ffba00"
+        android:textColor="@color/text_colour"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <Button
         android:id="@+id/to_scenes_button"
@@ -29,7 +29,8 @@
         android:layout_below="@id/welcome"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#ffba00"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/text_colour"
         android:text="Сцены"
         app:layout_constraintBottom_toTopOf="@+id/to_spotlight_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,10 +45,25 @@
         android:layout_below="@id/to_scenes_button"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="304dp"
-        android:background="#ffba00"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/text_colour"
         android:text="прожектора"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/changeSpCount"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:text="Изменить количество прожекторов"
+
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/text_colour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_spotlight_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

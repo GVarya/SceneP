@@ -1,0 +1,30 @@
+StageSparkle
+------------
+
+Запуск сервера с эмулятором. 
+
+1. Скачать server.zip на компьютер: https://disk.yandex.ru/d/Q-ZacXB9WLE4Ww 
+2. Распаковать server.zip. 
+3. Запустить 1_simple_server.exe. 
+4. Запустить 2_a_dmx_worker_emulator.exe. 
+
+
+Запуск сервера с реальным оборудованием. 
+
+1. Скачать server.zip на компьютер: https://disk.yandex.ru/d/Q-ZacXB9WLE4Ww 
+2. Распаковать server.zip. 
+3. Запустить 1_simple_server.exe. 
+4. Запустить 2_b_dmx_worker_real.exe. 
+5. Ввести в консоль название DMX порта (можно посмотреть в диспетчере устройств). 
+
+
+Запуск мобильного приложения. 
+
+1. Скачать StageSparkle.apk на телефон: https://disk.yandex.ru/d/ITzXZDx-K6ANLQ
+2. Запустить StageSparkle.apk. 
+3. Узнать IP-адрес компьютера, на котором запущен сервер. 
+4. Ввести IP адрес в приложении. 
+
+
+Ссылка на видео для защиты проекта: https://disk.yandex.ru/i/goxCzoiwrWpVQw
+Ссылка на презентацию для защиты проекта: https://disk.yandex.ru/i/BzTr7VMgCb-WwA

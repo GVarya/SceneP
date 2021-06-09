@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import static com.example.project.BeforeYouStartActivity.currentPosition;
+import static com.example.project.MainActivity.currentPosition;
 import static com.example.project.BeforeYouStartActivity.s;
 import static com.example.project.BeforeYouStartActivity.scenes;
 
@@ -37,11 +37,9 @@ public class SceneAdapter  extends RecyclerView.Adapter<SceneAdapter.ViewHolder>
                 sceneName = ((Button) v).getText().toString();
                 for(Scene scene: scenes){
                     if(scene.getName().equals(sceneName)){
-                        for(Lamp l: scene.getLamps()){
-                            s.send(l);
-                            Log.i("lamp", l.getCannal()+ " " + l.getIntensity());
-                            currentPosition.changeLamp(l);
-                        }
+                        s.send(scene);
+                        Log.i("scene", scene.getName()+ " " + scene.getLamps());
+                        currentPosition.changeScene(scene);
                     }
                 }
             }

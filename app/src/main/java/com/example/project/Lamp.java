@@ -1,17 +1,17 @@
 package com.example.project;
 
 public class Lamp {
-    private int cannal;
+    private int channel;
     private int intensity;
 
 
     public Lamp(int cannal, int intensity) {
-        this.cannal = cannal;
+        this.channel = cannal;
         this.intensity = intensity;
     }
 
-    public int getCannal() {
-        return cannal;
+    public int getChannel() {
+        return channel;
     }
 
 
@@ -22,5 +22,13 @@ public class Lamp {
 
     public void setIntensity(int intensity) {
         this.intensity = intensity;
+    }
+
+    @Override
+    public String toString() {
+        return "Lamp{" +
+                "channel=" + channel +
+                ", intensity=" + intensity +
+                '}';
     }
 }

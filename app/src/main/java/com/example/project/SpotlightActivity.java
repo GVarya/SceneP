@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,9 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-import static com.example.project.BeforeYouStartActivity.currentPosition;
 import static com.example.project.BeforeYouStartActivity.scenes;
+import static com.example.project.MainActivity.currentPosition;
 import static com.example.project.MainActivity.spCount;
 
 
@@ -65,7 +67,8 @@ public class SpotlightActivity extends AppCompatActivity implements  View.OnClic
         else if(v.getId() == R.id.save_button){
             //Log.i("TAG", "onClick: was");
             sceneName = sceneNameEditText.getText().toString();
-            scenes.add(new Scene(sceneName, currentPosition.getLamps()));
+            scenes.add(new Scene(sceneName, Scene.cloneLamps(currentPosition.getLamps())));
+            Log.i("scenes", scenes.get(scenes.size() - 1).getName() + " " + Arrays.toString(scenes.get(scenes.size() - 1).getLamps().toArray()) + "");
             newSceneNameDialog.dismiss();
 
 

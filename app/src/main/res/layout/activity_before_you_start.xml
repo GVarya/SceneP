@@ -26,6 +26,8 @@
 <EditText
     android:theme="@style/SeekBarColor"
     android:id="@+id/IpAddress"
+    android:inputType="number"
+    android:digits="0123456789."
     android:layout_width="290dp"
     android:layout_height="50dp"
     android:hint="Например: 192.168.1.123"

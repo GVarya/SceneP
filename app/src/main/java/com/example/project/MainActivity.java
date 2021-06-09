@@ -10,10 +10,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.project.BeforeYouStartActivity.allOn;
+import static com.example.project.BeforeYouStartActivity.blackOut;
 import static java.lang.Integer.parseInt;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static int spCount = 12;
+    public static Scene currentPosition;
+
 
     private Button toScenes;
     private Button to_spotlight;
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         to_spotlight.setOnClickListener(this);
         changeSpCount.setOnClickListener(this);
 
-
+        currentPosition = new Scene("currentPosition", spCount, 0);
 
 
     }
@@ -53,12 +57,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
         else if (v.getId() == R.id.save_button){
-            if(parseInt(spCountInput.getText().toString()) > 24){
-                spCount = 24;
+            if(parseInt(spCountInput.getText().toString()) > 512){
+                spCount = 512;
             }
             else{
                 spCount = parseInt(spCountInput.getText().toString());
-
+                currentPosition.changeLampsCount(spCount);
+                allOn.changeLampsCount(spCount);
+                blackOut.changeLampsCount(spCount);
             }
             newSpCountDialog.dismiss();
         }

@@ -8,7 +8,7 @@ POLL_PERIOD = 0.1 # S
 last_time = 0
 
 #port_name = input()
-
+#port_name = "COM8"
 #COM8
 #dmx = DmxPy(port_name,  log_actions=True)
 dmx = DmxPyTry()
@@ -20,7 +20,7 @@ while True:
     if len(commands) > 0:
         for command in commands:
             #print(command["channel"], ":", command["intensity"])
-            print(command["channel"], ":", command["intensity"])
+            #print(command["channel"], ":", command["intensity"])
             if command["channel"] == "all":
                 if int(command["intensity"]) > 0:
                     dmx.allOn(int(command["intensity"]))

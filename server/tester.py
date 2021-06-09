@@ -18,7 +18,7 @@ class DmxPyTry:
         if chan < 0: chan = 0
         if intensity > 255: intensity = 255
         if intensity < 0: intensity = 0
-        logging.info("Set intensity {} for channel {}".format(intensity, chan))
+        #logging.info("Set intensity {} for channel {}".format(intensity, chan))
         global frame
         #frame = Frame(root, color=root.rgba(10, 0, 0, intensity / 255))
         self.dmxData[chan].configure(background="#{:02x}{:02x}{:02x}".format(255, intensity, intensity//3))

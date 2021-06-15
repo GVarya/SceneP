@@ -14,8 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ErrorActivity"></activity>
-        <activity android:name=".FilterActivity" />
+        <activity
+            android:name=".ErrorActivity"
+            android:screenOrientation="portrait"
+        ></activity>
+        <activity
+            android:name=".FilterActivity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".BeforeYouStartActivity"
             android:screenOrientation="portrait">

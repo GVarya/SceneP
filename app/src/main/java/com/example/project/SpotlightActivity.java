@@ -1,6 +1,8 @@
 package com.example.project;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,6 +46,8 @@ public class SpotlightActivity extends AppCompatActivity implements  View.OnClic
         recyclerView.setAdapter(adapter);
 
         newSceneNameDialog = new Dialog(SpotlightActivity.this);
+        newSceneNameDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
         newSceneNameDialog.setContentView(R.layout.dialog_window_question);
 
         sceneNameEditText = newSceneNameDialog.findViewById(R.id.input);

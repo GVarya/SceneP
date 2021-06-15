@@ -30,13 +30,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/rounded_button"
-        android:textColor="@color/text_colour"
         android:text="Сцены"
+        android:textColor="@color/text_colour"
         app:layout_constraintBottom_toTopOf="@+id/to_spotlight_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/welcome"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.852" />
 
     <Button
         android:id="@+id/to_spotlight_button"
@@ -51,6 +53,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/to_filter_button"
+        android:layout_width="170dp"
+        android:layout_height="75dp"
+        android:layout_below="@id/to_spotlight_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="204dp"
+        android:background="@drawable/rounded_button"
+        android:text="спецэффекты"
+        android:textColor="@color/text_colour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_spotlight_button"
+        app:layout_constraintVertical_bias="0.84" />
 
     <Button
         android:id="@+id/changeSpCount"

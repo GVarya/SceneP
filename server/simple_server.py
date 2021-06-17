@@ -1,18 +1,29 @@
 from flask import Flask, request
 import json
+import threading
+import queue
+
+from effect_maker import effects_thread, get_effects_names
+
 server = Flask(__name__)
 
-commands = [
+commands = []
 
-]
+super_effects_commands = queue.Queue()
+
+
+print("server run")
+
 
 @server.route('/')
 def info_page():
+    print("/")
     return "<h1>DMX Server</h1>"
 
 
 @server.route('/add', methods=['POST'])
 def add_command():
+    print("spotlight")
     j_lamp = request.values.get("params")
     print(j_lamp)
     lamp = json.loads(j_lamp)
@@ -28,6 +39,7 @@ def add_command():
 
 @server.route('/addScene', methods=['POST'])
 def addScene_command():
+    print("scene")
     j_scene = request.values.get("params")
     scene = json.loads(j_scene)
     lamps = scene["lamps"]
@@ -40,9 +52,21 @@ def addScene_command():
 
 
 
+@server.route('/addSuperEffect', methods=['POST'])
+def addSuperEffect_command():
+    print("superEffect")
+    j_f_command = request.values.get("params")
+    f_command = json.loads(j_f_command)
+    name = f_command["filterName"]
+    command = f_command["command"]
+    #print(name, command)
+    super_effects_commands.put(f_command)
+    return f'''Add name n:{name} command c:{command} '''
+
 
 @server.route('/get_commands')
 def get_commands():
+    print("getC")
     result = []
     for i in range(len(commands)):
         result.append(commands.pop(0))
@@ -51,4 +75,15 @@ def get_commands():
     }
 
 
+@server.route('/getFiltersName', methods=['POST'])
+def getFiltersName():
+    print("getFN")
+    result = get_effects_names()
+
+    return {
+        "names": result
+    }
+
+t = threading.Thread(target=effects_thread, args=(super_effects_commands, commands,))
+t.start()
 server.run(host="0.0.0.0", port=5000)

@@ -19,7 +19,7 @@ while True:
     commands = response.json()['commands']
     if len(commands) > 0:
         for command in commands:
-            #print(command["channel"], ":", command["intensity"])
+            print(command["channel"], ":", command["intensity"])
             #print(command["channel"], ":", command["intensity"])
             if command["channel"] == "all":
                 if int(command["intensity"]) > 0:
@@ -36,3 +36,4 @@ while True:
         dmx.render()
 
     time.sleep(POLL_PERIOD)
+

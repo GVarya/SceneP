@@ -1,6 +1,5 @@
 package com.example.project;
 
-import android.content.Intent;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -84,9 +83,8 @@ public class Sender extends Thread {
 
 
                 } catch (Exception e) {
-                    Intent i = new Intent(MyApplication.getAppContext(), ErrorActivity.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    MyApplication.getAppContext().startActivity(i);
+                    Log.e("log_tag", "Error in http connection " + e.toString() + Arrays.toString(e.getStackTrace()));
+                    Errors.showConnectionErrorActivity();
                 }
             }
 
@@ -111,9 +109,7 @@ public class Sender extends Thread {
 
 
                 } catch (Exception e) {
-                    Intent i = new Intent(MyApplication.getAppContext(), ErrorActivity.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    MyApplication.getAppContext().startActivity(i);
+                    Errors.showConnectionErrorActivity();
                     Log.e("log_tag", "Error in http connection " + e.toString() + Arrays.toString(e.getStackTrace()));
                 }
             }
@@ -142,9 +138,8 @@ public class Sender extends Thread {
 
 
                 } catch (Exception e) {
-                    Intent i = new Intent(MyApplication.getAppContext(), ErrorActivity.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    MyApplication.getAppContext().startActivity(i);
+                    Log.e("log_tag", "Error in http connection " + e.toString() + Arrays.toString(e.getStackTrace()));
+                    Errors.showConnectionErrorActivity();
                 }
             }
 

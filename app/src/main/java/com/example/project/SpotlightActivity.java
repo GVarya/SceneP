@@ -66,10 +66,13 @@ public class SpotlightActivity extends AppCompatActivity implements  View.OnClic
         if(v.getId() == R.id.save_as_scene){
             newSceneNameDialog.show();
 
-
+//            Errors.showDialog("Введите название сцены", SpotlightActivity.this);
+//            sceneName = Errors.getResult();
+//            scenes.add(new Scene(sceneName, Scene.cloneLamps(currentPosition.getLamps())));
+//            Log.i("scenes", scenes.get(scenes.size() - 1).getName() + " " + Arrays.toString(scenes.get(scenes.size() - 1).getLamps().toArray()) + "");
         }
         else if(v.getId() == R.id.save_button){
-            //Log.i("TAG", "onClick: was");
+            Log.i("TAG", "onClick: was");
             sceneName = sceneNameEditText.getText().toString();
             scenes.add(new Scene(sceneName, Scene.cloneLamps(currentPosition.getLamps())));
             Log.i("scenes", scenes.get(scenes.size() - 1).getName() + " " + Arrays.toString(scenes.get(scenes.size() - 1).getLamps().toArray()) + "");

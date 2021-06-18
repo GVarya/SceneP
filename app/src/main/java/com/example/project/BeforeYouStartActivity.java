@@ -32,11 +32,12 @@ public class BeforeYouStartActivity extends AppCompatActivity implements View.On
         ipAddressWidget = findViewById(R.id.IpAddress);
         send = findViewById(R.id.buttonSend);
         send.setOnClickListener(this);
-        allOn = new Scene("Включить всё", 512, 255);
-        scenes.add(allOn);
-        blackOut = new Scene("выключить всё", 512, 0);
-        scenes.add(blackOut);
-
+        if(scenes.size() == 0) {
+            allOn = new Scene("Включить всё", 12, 255);
+            scenes.add(allOn);
+            blackOut = new Scene("выключить всё", 12, 0);
+            scenes.add(blackOut);
+        }
 
 
 

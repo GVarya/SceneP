@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: b493375f7ea3ab74684edd64a001c93f
+timeCreated: 1551371171
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Auditorium_Chair_Set_07_01
+    100004: Auditorium_Chair_Set_07_02
+    100006: Auditorium_Chair_Set_07_03
+    100008: Auditorium_Chair_Set_07_04
+    100010: Auditorium_Chair_Set_07_05
+    100012: Auditorium_Chair_Set_07_06
+    100014: Auditorium_Chair_Set_07_07
+    100016: Auditorium_Chair_Set_07_08
+    100018: Auditorium_Chair_Set_07_09
+    100020: Auditorium_Chair_Set_07_10
+    100022: Auditorium_Chair_Set_07_11
+    100024: Auditorium_Chair_Set_07_12
+    100026: Auditorium_Chair_Set_07_13
+    100028: Auditorium_Chair_Set_07_14
+    100030: Auditorium_Chair_Set_07_15
+    100032: Auditorium_Chair_Set_07_16
+    100034: Auditorium_Chair_Set_07_17
+    100036: Auditorium_Chair_Set_07_18
+    100038: Auditorium_Chair_Set_07_19
+    100040: Auditorium_Chair_Set_07_20
+    400000: //RootNode
+    400002: Auditorium_Chair_Set_07_01
+    400004: Auditorium_Chair_Set_07_02
+    400006: Auditorium_Chair_Set_07_03
+    400008: Auditorium_Chair_Set_07_04
+    400010: Auditorium_Chair_Set_07_05
+    400012: Auditorium_Chair_Set_07_06
+    400014: Auditorium_Chair_Set_07_07
+    400016: Auditorium_Chair_Set_07_08
+    400018: Auditorium_Chair_Set_07_09
+    400020: Auditorium_Chair_Set_07_10
+    400022: Auditorium_Chair_Set_07_11
+    400024: Auditorium_Chair_Set_07_12
+    400026: Auditorium_Chair_Set_07_13
+    400028: Auditorium_Chair_Set_07_14
+    400030: Auditorium_Chair_Set_07_15
+    400032: Auditorium_Chair_Set_07_16
+    400034: Auditorium_Chair_Set_07_17
+    400036: Auditorium_Chair_Set_07_18
+    400038: Auditorium_Chair_Set_07_19
+    400040: Auditorium_Chair_Set_07_20
+    2300000: Auditorium_Chair_Set_07_01
+    2300002: Auditorium_Chair_Set_07_02
+    2300004: Auditorium_Chair_Set_07_03
+    2300006: Auditorium_Chair_Set_07_04
+    2300008: Auditorium_Chair_Set_07_05
+    2300010: Auditorium_Chair_Set_07_06
+    2300012: Auditorium_Chair_Set_07_07
+    2300014: Auditorium_Chair_Set_07_08
+    2300016: Auditorium_Chair_Set_07_09
+    2300018: Auditorium_Chair_Set_07_10
+    2300020: Auditorium_Chair_Set_07_11
+    2300022: Auditorium_Chair_Set_07_12
+    2300024: Auditorium_Chair_Set_07_13
+    2300026: Auditorium_Chair_Set_07_14
+    2300028: Auditorium_Chair_Set_07_15
+    2300030: Auditorium_Chair_Set_07_16
+    2300032: Auditorium_Chair_Set_07_17
+    2300034: Auditorium_Chair_Set_07_18
+    2300036: Auditorium_Chair_Set_07_19
+    2300038: Auditorium_Chair_Set_07_20
+    3300000: Auditorium_Chair_Set_07_01
+    3300002: Auditorium_Chair_Set_07_02
+    3300004: Auditorium_Chair_Set_07_03
+    3300006: Auditorium_Chair_Set_07_04
+    3300008: Auditorium_Chair_Set_07_05
+    3300010: Auditorium_Chair_Set_07_06
+    3300012: Auditorium_Chair_Set_07_07
+    3300014: Auditorium_Chair_Set_07_08
+    3300016: Auditorium_Chair_Set_07_09
+    3300018: Auditorium_Chair_Set_07_10
+    3300020: Auditorium_Chair_Set_07_11
+    3300022: Auditorium_Chair_Set_07_12
+    3300024: Auditorium_Chair_Set_07_13
+    3300026: Auditorium_Chair_Set_07_14
+    3300028: Auditorium_Chair_Set_07_15
+    3300030: Auditorium_Chair_Set_07_16
+    3300032: Auditorium_Chair_Set_07_17
+    3300034: Auditorium_Chair_Set_07_18
+    3300036: Auditorium_Chair_Set_07_19
+    3300038: Auditorium_Chair_Set_07_20
+    4300000: Auditorium_Chair_Set_07_04
+    4300002: Auditorium_Chair_Set_07_05
+    4300004: Auditorium_Chair_Set_07_06
+    4300006: Auditorium_Chair_Set_07_01
+    4300008: Auditorium_Chair_Set_07_03
+    4300010: Auditorium_Chair_Set_07_02
+    4300012: Auditorium_Chair_Set_07_11
+    4300014: Auditorium_Chair_Set_07_13
+    4300016: Auditorium_Chair_Set_07_14
+    4300018: Auditorium_Chair_Set_07_09
+    4300020: Auditorium_Chair_Set_07_08
+    4300022: Auditorium_Chair_Set_07_07
+    4300024: Auditorium_Chair_Set_07_10
+    4300026: Auditorium_Chair_Set_07_12
+    4300028: Auditorium_Chair_Set_07_17
+    4300030: Auditorium_Chair_Set_07_16
+    4300032: Auditorium_Chair_Set_07_18
+    4300034: Auditorium_Chair_Set_07_15
+    4300036: Auditorium_Chair_Set_07_19
+    4300038: Auditorium_Chair_Set_07_20
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

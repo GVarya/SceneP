@@ -48,12 +48,15 @@ public class BeforeYouStartActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.buttonSend){
-            ipAddress = ipAddressWidget.getText().toString();
+            if(ipAddressWidget.getText().toString().length() > 0){
+                ipAddress = ipAddressWidget.getText().toString();
+            }
             s = new Sender(ipAddress);
-            s.start();
             r = new Reader();
             r.start();
             r.getFilersName();
+
+            s.start();
             checkConnection();
             Intent i = new Intent(BeforeYouStartActivity.this, MainActivity.class);
             startActivity(i);
@@ -62,9 +65,7 @@ public class BeforeYouStartActivity extends AppCompatActivity implements View.On
     }
 
     public void checkConnection(){
-        s.send(new Lamp(0, 0));
-
-
+        s.send();
 
     }
 

@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         currentPosition = new Scene("currentPosition", spCount, 0);
 
 
+
+
     }
 
 
@@ -68,15 +70,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
         else if (v.getId() == R.id.save_button){
-            if(parseInt(spCountInput.getText().toString()) > 512){
-                spCount = 512;
+
+
+            if(spCountInput.getText().toString().length() > 0){
+                try {
+                    if(parseInt(spCountInput.getText().toString()) > 512){
+                        spCount = 512;
+                    }
+                    else {
+                        spCount = parseInt(spCountInput.getText().toString());
+                        currentPosition.changeLampsCount(spCount);
+                        allOn.changeLampsCount(spCount);
+                        blackOut.changeLampsCount(spCount);
+                    }
+                }
+                catch (NumberFormatException e){
+                    e.printStackTrace();
+                }
+
+
             }
-            else{
-                spCount = parseInt(spCountInput.getText().toString());
-                currentPosition.changeLampsCount(spCount);
-                allOn.changeLampsCount(spCount);
-                blackOut.changeLampsCount(spCount);
-            }
+
+
             newSpCountDialog.dismiss();
         }
         else if(v.getId() == R.id.changeSpCount){

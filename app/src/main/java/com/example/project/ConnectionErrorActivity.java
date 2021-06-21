@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ErrorActivity extends AppCompatActivity implements View.OnClickListener{
+public class ConnectionErrorActivity extends AppCompatActivity implements View.OnClickListener{
     Button ok;
     TextView error_message;
 
@@ -27,7 +27,7 @@ public class ErrorActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        Intent i = new Intent(ErrorActivity.this, BeforeYouStartActivity.class);
+        Intent i = new Intent(ConnectionErrorActivity.this, BeforeYouStartActivity.class);
         startActivity(i);
     }
 }

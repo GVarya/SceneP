@@ -46,8 +46,8 @@ public class Sender extends Thread {
     public static boolean connectionOk;
 
 
-    public Sender(String ipAddress) {
-        this.ipAddress = ipAddress;
+    public Sender(String ipAdress) {
+        this.ipAddress = ipAdress;
     }
 
     public void send(Lamp lamp) {
@@ -67,81 +67,107 @@ public class Sender extends Thread {
 
     }
 
-
-
-
-
-
-
-    public void sendData(String data, String node){
-        try{
-            HttpClient httpclient = new DefaultHttpClient();
-            request = new HttpPost("http://" + ipAddress + ":5000/" + node);
-            UrlEncodedFormEntity entity = null;
-            params.add(new BasicNameValuePair("params", data));
-            Log.i("data_to_send", data);
-            entity = new UrlEncodedFormEntity(params, "UTF-8");
-            request.setEntity(entity);
-            HttpResponse response = httpclient.execute(request);
-            params.clear();
-            in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-            Log.i("log_tag", "its ok");
-
-            Log.i("data_to_send", data);
-
-
-        } catch (Exception e) {
-            connectionOk = false;
-            Log.e("log_tag", "Error in http connection " + e.toString() + Arrays.toString(e.getStackTrace()));
-            Errors.showConnectionErrorActivity();
-        }
-    }
-
-
-
-
-
-
-
     public void run() {
-
 
         while (!interrupted()) {
 
             if (commands.size() != 0) {
+                try {
+                    if(connectionOk) {
+                        HttpParams httpParameters = new BasicHttpParams();
+                        // Set the timeout in milliseconds until a connection is established.
+                        // The default value is zero, that means the timeout is not used.
+                        int timeoutConnection = 500;
+                        HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
+                        // Set the default socket timeout (SO_TIMEOUT)
+                        // in milliseconds which is the timeout for waiting for data.
+                        int timeoutSocket = 500;
+                        HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
 
-                if(connectionOk) {
-                    Gson gson = new Gson();
-                    jLamp = gson.toJson(commands.element());
-                    commands.poll();
-                    sendData(jLamp, "add"); // есть проблемка, если отключить сервер во время использования не вылезет ошибки в приложение, этого не было в закомент. версии. (она в репозитории предыдущая)
+                        HttpClient httpclient = new DefaultHttpClient(httpParameters);
+
+                        Gson gson = new Gson();
+
+
+                        request = new HttpPost("http://" + ipAddress + ":5000/add");
+                        jLamp = gson.toJson(commands.element());
+                        params.add(new BasicNameValuePair("params", jLamp));
+                        Log.i("lamp", jLamp);
+                        commands.poll();
+
+                        UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params, "UTF-8");
+                        request.setEntity(entity);
+                        HttpResponse response = httpclient.execute(request);
+                        //request.wait(1000000);
+                        params.clear();
+                        in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+                        Log.i("log_tag", "its ok");
+                    }
+
+                } catch (Exception e) {
+                    connectionOk = false;
+                    Log.e("log_tag", "Error in http connection " + e.toString() + Arrays.toString(e.getStackTrace()));
+                    Errors.showConnectionErrorActivity();
                 }
-
             }
 
             if (sceneCommands.size() != 0) {
-                if(connectionOk) {
+                try {
+                    if(connectionOk) {
+                        HttpClient httpclient = new DefaultHttpClient();
 
-                    Gson gson = new Gson();
-                    Scene scene_to_send = sceneCommands.poll();
-                    jScene = gson.toJson(scene_to_send);
-                    sendData(jScene, "addScene");
+                        Gson gson = new Gson();
 
+                        Scene scene_to_send = sceneCommands.poll();
+                        request = new HttpPost("http://" + ipAddress + ":5000/addScene");
+                        jScene = gson.toJson(scene_to_send);
+                        params.add(new BasicNameValuePair("params", jScene));
+                        Log.i("scene", jScene);
+
+                        UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params, "UTF-8");
+                        request.setEntity(entity);
+                        HttpResponse response = httpclient.execute(request);
+                        params.clear();
+                        in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+                        Log.i("log_tag", "its ok");
+                    }
+
+                } catch (Exception e) {
+                    connectionOk = false;
+                    Errors.showConnectionErrorActivity();
+                    Log.e("log_tag", "Error in http connection " + e.toString() + Arrays.toString(e.getStackTrace()));
                 }
-
-
             }
 
 
+
             if (filterCommands.size() != 0) {
-                if (connectionOk) {
-                    Gson gson = new Gson();
-                    jFilterCommand = gson.toJson(filterCommands.element());
-                    filterCommands.poll();
-                    sendData(jFilterCommand, "addSuperEffect");
+                try {
+                    if (connectionOk) {
+                        HttpClient httpclient = new DefaultHttpClient();
+
+                        Gson gson = new Gson();
+
+
+                        request = new HttpPost("http://" + ipAddress + ":5000/addSuperEffect");
+                        jFilterCommand = gson.toJson(filterCommands.element());
+                        params.add(new BasicNameValuePair("params", jFilterCommand));
+
+                        filterCommands.poll();
+
+                        UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params, "UTF-8");
+                        request.setEntity(entity);
+                        HttpResponse response = httpclient.execute(request);
+                        params.clear();
+                        in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+                        Log.i("log_tag", "its ok");
+                    }
+
+                } catch (Exception e) {
+                    connectionOk = false;
+                    Log.e("log_tag", "Error in http connection " + e.toString() + Arrays.toString(e.getStackTrace()));
+                    Errors.showConnectionErrorActivity();
                 }
-
-
             }
 
             if (connectionCheckRequired) {
@@ -174,7 +200,6 @@ public class Sender extends Thread {
 
 
         }
-
     }
 
     public String getIpAddress() {

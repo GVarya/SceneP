@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ConnectionErrorActivity extends AppCompatActivity implements View.OnClickListener{
-    Button ok;
+    Button button_agree;
     TextView error_message;
 
 
@@ -17,10 +17,10 @@ public class ConnectionErrorActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_error);
-        ok = findViewById(R.id.button_agree);
+        button_agree = findViewById(R.id.button_agree);
         error_message = findViewById(R.id.error_message);
         error_message.setText("Ой, ой проблемы с соединением. \n Проверьте IP-адрес");
-        ok.setOnClickListener(this);
+        button_agree.setOnClickListener(this);
 
 
     }

@@ -5,8 +5,8 @@ public class Lamp {
     private int intensity;
 
 
-    public Lamp(int cannal, int intensity) {
-        this.channel = cannal;
+    public Lamp(int channel, int intensity) {
+        this.channel = channel;
         this.intensity = intensity;
     }
 

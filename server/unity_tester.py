@@ -5,6 +5,7 @@ import socket
 logging.basicConfig(level=logging.INFO)
 server_address = ('localhost', 8052)
 
+# Эмулятор Unity.
 
 class DmxPyTry:
     def __init__(self):

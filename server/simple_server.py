@@ -5,6 +5,8 @@ import queue
 
 from effect_maker import effects_thread, get_effects_names
 
+# Сервер. Осуществляет обмен данными между мобильной программой и компьютерной.
+
 server = Flask(__name__)
 
 commands = []
@@ -22,7 +24,7 @@ def info_page():
 
 
 @server.route('/add', methods=['POST'])
-def add_command():
+def add_command(): # Считывет сигналы для прожекторов и добавляет в общий массив команд.
     print("spotlight")
     j_lamp = request.values.get("params")
     print(j_lamp)
@@ -38,7 +40,7 @@ def add_command():
 
 
 @server.route('/addScene', methods=['POST'])
-def addScene_command():
+def addScene_command(): # Считывает сигналя для сцен, разбирает на отдельные команды для прожекторов и добавляет в общий массив команд.
     print("scene")
     j_scene = request.values.get("params")
     scene = json.loads(j_scene)
@@ -53,7 +55,7 @@ def addScene_command():
 
 
 @server.route('/addSuperEffect', methods=['POST'])
-def addSuperEffect_command():
+def addSuperEffect_command(): # Считывает сигналы для эффектов и отправляет в effect_maker.
     print("superEffect")
     j_f_command = request.values.get("params")
     f_command = json.loads(j_f_command)
@@ -65,7 +67,7 @@ def addSuperEffect_command():
 
 
 @server.route('/get_commands')
-def get_commands():
+def get_commands(): # Отправляет текущий массив команд.
     print("getC")
     result = []
     for i in range(len(commands)):
@@ -76,7 +78,7 @@ def get_commands():
 
 
 @server.route('/getFiltersName', methods=['POST'])
-def getFiltersName():
+def getFiltersName(): # Отправляет названия всех существующих эффектов.
     print("getFN")
     result = get_effects_names()
 

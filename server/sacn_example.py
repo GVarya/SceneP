@@ -1,6 +1,8 @@
 import sacn
 import time
 
+# Пример работы протокола sacn. В работе сервера не участвует.
+
 sender = sacn.sACNsender()
 #sender = sacn.sACNsender(bind_address="192.168.1.4")
 sender.start()

@@ -2,6 +2,8 @@ from tkinter import *
 import threading
 import logging
 
+# Эмулятор. Имеет тот же набор команд что и DmxPy, но отображает их графически.
+
 logging.basicConfig(level=logging.INFO)
 
 class DmxPyTry:

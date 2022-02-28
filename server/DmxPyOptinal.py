@@ -11,6 +11,8 @@ DMXINTENSITY=chr(6)+chr(1)+chr(2)
 DMXINIT1= chr(3)+chr(2)+chr(0)+chr(0)+chr(0)
 DMXINIT2= chr(10)+chr(2)+chr(0)+chr(0)+chr(0)
 
+# Что-то дополнительное возникшее в процессе доработки библиотеки DmxPy. Вроде нигде не используется.
+
 class DmxPy:
 	def __init__(self, serialPort):
 		try:

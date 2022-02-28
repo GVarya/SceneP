@@ -1,6 +1,8 @@
 import sys, time
 import serial
 
+# Класс, который посылает dmx сигналы на com порт
+
 # DMXOPEN = chr(126)
 DMXOPEN = chr(0) + chr(0)
 # DMXCLOSE = chr(231)

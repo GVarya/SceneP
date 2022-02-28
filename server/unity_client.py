@@ -4,6 +4,8 @@ import time
 import requests
 import random
 
+# Клиент для работы с unity. 
+
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 

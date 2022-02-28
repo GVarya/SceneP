@@ -8,19 +8,19 @@ POLL_PERIOD = 0.01 # S
 
 last_time = 0
 
-#port_name = input()
-#port_name = "COM8"
-#COM8
-#dmx = DmxPy(port_name,  log_actions=True)
-dmx = DmxPyTry()
+#port_name = input() # Нужно раскоментировать если запускать с незнакомого компьютера (на реальном оборудование) и ввести название com порта (см. в диспетчере устройств).
+#port_name = "COM8" # Сюда можно вписать название com порта, если он часто используется.
+#COM8 # Название порта 
+#dmx = DmxPy(port_name,  log_actions=True) # Создание объекта для отправки dmx сигнала(реальное оборудование).
+dmx = DmxPyTry() # Создание объекта для управления эмулятором
 
 
-while True:
+while True: # В бесконечном  цикле постоянно посылаются запросы на сервер и считывается массив команд для прожекторов.
     response = requests.get('http://127.0.0.1:5000/get_commands')
 
     commands = response.json()['commands']
     if len(commands) > 0:
-        for command in commands:
+        for command in commands: # Цикл по массиву команд. В нём применяются команды.
             print(command["channel"], ":", command["intensity"])
             #print(command["channel"], ":", command["intensity"])
             if command["channel"] == "all":
